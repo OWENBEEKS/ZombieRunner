@@ -22,7 +22,7 @@ public class PlayerHealth : MonoBehaviour
         health -= damage;
         if(health <= damage)
         {
-            Debug.Log("YOU HAVE FAILED");
+            GetComponent<DeathHandler>().HandleDeath();
         }   
     }
 }
