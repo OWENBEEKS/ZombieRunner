@@ -15,8 +15,4 @@ public class Ammo : MonoBehaviour
     {
         ammoAmount--;
     }
-
-    //return ammo
-
-    //reduce ammo
 }
