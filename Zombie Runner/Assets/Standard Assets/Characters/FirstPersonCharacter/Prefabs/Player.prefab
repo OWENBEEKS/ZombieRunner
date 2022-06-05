@@ -182,8 +182,8 @@ GameObject:
   - component: {fileID: 13600000}
   - component: {fileID: 11400004}
   - component: {fileID: 2108027198623413205}
-  - component: {fileID: 644284511012554388}
   - component: {fileID: 1165052741}
+  - component: {fileID: 8659862764670574316}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -319,19 +319,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 0}
---- !u!114 &644284511012554388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35605474eaf735345a0c31d8ae90d027, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ammoAmount: 10
 --- !u!114 &1165052741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,6 +332,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+--- !u!114 &8659862764670574316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35605474eaf735345a0c31d8ae90d027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoSlots:
+  - ammoType: 0
+    ammoAmount: 0
+  - ammoType: 1
+    ammoAmount: 5
+  - ammoType: 2
+    ammoAmount: 5
 --- !u!1 &1185196255229220172
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +413,11 @@ PrefabInstance:
     - target: {fileID: 218334944, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
       propertyPath: ammoSlot
       value: 
-      objectReference: {fileID: 644284511012554388}
+      objectReference: {fileID: 8659862764670574316}
+    - target: {fileID: 218334944, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
+      propertyPath: ammoType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2337074158996965286, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -489,7 +499,11 @@ PrefabInstance:
     - target: {fileID: 218334944, guid: 17c648d0a18f3be40b7dab426f374792, type: 3}
       propertyPath: ammoSlot
       value: 
-      objectReference: {fileID: 644284511012554388}
+      objectReference: {fileID: 8659862764670574316}
+    - target: {fileID: 218334944, guid: 17c648d0a18f3be40b7dab426f374792, type: 3}
+      propertyPath: ammoType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2337074158996965286, guid: 17c648d0a18f3be40b7dab426f374792, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -623,7 +637,7 @@ PrefabInstance:
     - target: {fileID: 5931796982670107114, guid: 3d3a4f5fcb4669e4396a9e4382609315, type: 3}
       propertyPath: ammoSlot
       value: 
-      objectReference: {fileID: 644284511012554388}
+      objectReference: {fileID: 8659862764670574316}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d3a4f5fcb4669e4396a9e4382609315, type: 3}
 --- !u!4 &5189299629753401609 stripped
