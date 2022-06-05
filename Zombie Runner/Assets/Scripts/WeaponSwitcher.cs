@@ -6,6 +6,7 @@ using UnityEngine;
 public class WeaponSwitcher : MonoBehaviour
 {
     [SerializeField] int currentWeapon = 0;
+
     void Start()
     {
         SetWeaponActive();
@@ -26,26 +27,27 @@ public class WeaponSwitcher : MonoBehaviour
 
     private void ProcessScrollWheel()
     {
-        if(Input.GetAxis("Mouse ScrollWheel") > 0)
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
-            if(currentWeapon >= transform.childCount - 1)
+            if (currentWeapon >= transform.childCount - 1)
             {
                 currentWeapon = 0;
             }
             else
             {
-                currentWeapon++;    
+                currentWeapon++;
             }
         }
-        if(Input.GetAxis("Mouse ScrollWheel") < 0)
+
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
-            if(currentWeapon <= transform.childCount - 1)
+            if (currentWeapon <= 0)
             {
-                currentWeapon = 0;
+                currentWeapon = transform.childCount - 1;
             }
             else
             {
-                currentWeapon++;    
+                currentWeapon--;
             }
         }
     }
@@ -56,25 +58,23 @@ public class WeaponSwitcher : MonoBehaviour
         {
             currentWeapon = 0;
         }
-        else if(Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             currentWeapon = 1;
         }
-        else if(Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             currentWeapon = 2;
         }
     }
 
-    
-
     private void SetWeaponActive()
     {
         int weaponIndex = 0;
 
-        foreach(Transform weapon in transform)
+        foreach (Transform weapon in transform)
         {
-            if(weaponIndex == currentWeapon)
+            if (weaponIndex == currentWeapon)
             {
                 weapon.gameObject.SetActive(true);
             }
@@ -84,7 +84,7 @@ public class WeaponSwitcher : MonoBehaviour
             }
             weaponIndex++;
         }
+
     }
 
-    
 }

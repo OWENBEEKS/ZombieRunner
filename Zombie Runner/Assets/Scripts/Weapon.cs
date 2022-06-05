@@ -12,8 +12,15 @@ public class Weapon : MonoBehaviour
     [SerializeField] GameObject hitEffect;
     [SerializeField] Ammo ammoSlot;
     [SerializeField] float timeBetweenShots = 0.5f;
+    [SerializeField] float timeBetweenWeaponsScroll = 0.5f;
 
     bool canShoot = true;
+    
+    private void OnEnable()
+    {
+        canShoot = true;
+        //Add delay for shooting when switching weapons
+    }
 
     void Update()
     {
